@@ -7,13 +7,11 @@
 #include "Hex.h"
 #include "Base64.h"
 
-
 unsigned int sha3widths[] = {224, 256, 384, 512, 0};
 unsigned int keccakwidths[] = {224, 256, 384, 512, 0};
 unsigned int shakewidths[] = {128, 256, 0};
 
 unsigned int bufferSize = 1024 * 4;
-
 
 template<typename F>
 int readFileIntoFunc(const char *fileName, F f) 

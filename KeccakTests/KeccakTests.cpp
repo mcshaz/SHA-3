@@ -8,10 +8,11 @@
 #include "../SHA-3/HashFunction.h"
 #include "../SHA-3/HashFunction.cpp"
 #include <string>
+#include <string_view>
 #include <vector>
 #include <sstream>
 
-std::string hex_encode(std::string inpt, KeccakBase& k) {
+std::string hex_encode(std::string_view inpt, KeccakBase& k) {
 	const uint8_t* byte_array = reinterpret_cast<const uint8_t*>(inpt.data());
 	k.addData(byte_array, 0, inpt.length());
 	std::vector<unsigned char> op = k.digest();
